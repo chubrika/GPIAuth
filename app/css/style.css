@@ -1,0 +1,380 @@
+@font-face {
+  font-family: notoSansRegular;
+  src: url(../fonts/NotoSansGeorgian-Regular.ttf);
+}
+@font-face {
+  font-family: notoSansMedium;
+  src: url(../fonts/NotoSansGeorgian-Medium.ttf);
+}
+@font-face {
+  font-family: notoSansBold;
+  src: url(../fonts/NotoSansGeorgian-Bold.ttf);
+}
+@font-face {
+  font-family: notoSansSemiBold;
+  src: url(../fonts/NotoSansGeorgian-SemiBold.ttf);
+}
+@font-face {
+  font-family: mtavruliBold;
+  src: url(../fonts/MYRIADGEOMTAVRULIBOLD.TTF);
+}
+@font-face {
+  font-family: mtavruliMedium;
+  src: url(../fonts/MYRIADGEOMTAVRULIMEDIUM.TTF);
+}
+*,
+body,
+html {
+  margin: 0;
+}
+
+header {
+  height: 120px;
+  display: flex;
+  padding-left: 37px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header-border {
+  background-color: #9199B44D;
+  height: 1px;
+  width: 100%;
+}
+
+.box {
+  box-shadow: 0px 10px 20px #0099ff0f;
+  border: 1px solid #9199B44D;
+  border-radius: 12px;
+  padding: 40px 0;
+  margin: auto;
+  width: 540px;
+}
+
+.form-width {
+  width: 380px;
+}
+
+.margin-title {
+  margin-bottom: 45px;
+}
+
+.content {
+  display: block;
+  padding-top: 80px;
+  margin-bottom: 80px;
+}
+
+.test {
+  background: red;
+  font-family: notoSansSemiBold;
+}
+
+.glob {
+  color: blue;
+}
+
+.color-darkblue {
+  color: #0E215E;
+}
+
+.avatar {
+  width: 80px;
+}
+
+.logo {
+  height: 70px;
+}
+
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-a--center {
+  align-items: center;
+}
+.flex-j--center {
+  justify-content: center;
+}
+
+.back {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.timer {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  color: #E30000;
+  font-size: 16px;
+  font-family: notoSansMedium;
+}
+
+.new-code {
+  color: #9199B4;
+  font-size: 14px;
+  text-decoration: underline;
+  font-family: notoSansSemiBold;
+}
+.new-code-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 18px;
+  padding-bottom: 32px;
+}
+
+.container {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.info-text {
+  font-family: mtavruliBold;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  color: #292562;
+}
+
+.confirm {
+  margin-bottom: 30px;
+}
+.confirm-text {
+  color: #292562;
+  font-size: 16px;
+  font-family: notoSansSemiBold;
+}
+.confirm-number {
+  font-size: 16px;
+  font-family: notoSansSemiBold;
+  color: #EE2A7B;
+}
+
+.m-b--md {
+  margin-bottom: 32px;
+}
+.m-b--xl {
+  margin-bottom: 40px;
+}
+
+.full-w {
+  width: 100%;
+}
+
+.color-white {
+  color: white;
+}
+
+.noto-regular {
+  font-family: notoSansRegular;
+}
+
+.button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  border-radius: 8px;
+}
+.button-disabled {
+  background-color: #9199B4;
+}
+.button-active {
+  background-color: #EE2A7B;
+}
+
+.material {
+  width: 100%;
+  height: 56px;
+  position: relative;
+}
+.material input {
+  font-size: 16px;
+  padding: 18px 12px 7px;
+  display: block;
+  width: calc(100% - 24px);
+  border: none;
+  color: #0E215E;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+.material input:focus {
+  outline: none;
+}
+.material input:focus ~ label, .material input:valid ~ label {
+  top: -12px;
+  font-size: 14px;
+  color: #9199B4;
+  background: #fff;
+  padding: 0px 5px;
+  font-family: notoSansBold;
+}
+.material input:focus ~ .borda {
+  border: 1px solid #292562;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  position: absolute;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  top: 0px;
+  pointer-events: none;
+  -moz-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+}
+.material label {
+  color: #0E215E;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: notoSansMedium;
+  position: absolute;
+  pointer-events: none;
+  left: 12px;
+  top: 18px;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+.material .borda {
+  border: 1px solid #DEE0E8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  pointer-events: none;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+.size-16 {
+  font-size: 16px;
+}
+
+.info--text {
+  color: #9199B4;
+  font-size: 12px;
+  position: absolute;
+  font-family: notoSansSemiBold;
+  bottom: -20px;
+}
+
+.eye {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  /* iOS fix */
+  border: 1px solid #9199B4;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  top: 2;
+}
+input[type=checkbox]:active {
+  box-shadow: inset 0 0 0 0.125rem #EE2A7B;
+}
+input[type=checkbox]:checked {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="none"/><path d="M19,3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V5A2,2,0,0,0,19,3ZM10,17,5,12l1.41-1.41L10,14.17l7.59-7.59L19,8Z" fill="%232962ff"/></svg>');
+  background-position: center;
+  box-shadow: none;
+}
+input[type=checkbox]:checked:active {
+  opacity: 0.9;
+}
+input[type=checkbox]::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(238, 42, 123, 0);
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0.5);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  will-change: transform background-color;
+}
+input[type=checkbox]:hover::before {
+  background-color: rgba(238, 42, 123, 0.1);
+  transform: scale(2.25);
+}
+
+h1 {
+  font-family: mtavruliBold;
+  font-size: 32px;
+}
+
+.terms {
+  font-family: notoSansSemiBold;
+  font-size: 14px;
+}
+.terms-first {
+  color: #141C4F;
+}
+.terms-second {
+  color: #EE2A7B;
+}
+
+.error-input {
+  border: 1px solid #E30000 !important;
+}
+.error-text {
+  color: #E30000;
+  font-size: 12px;
+  position: absolute;
+  bottom: -20px;
+  font-family: notoSansSemiBold;
+}
+.error-color {
+  color: #E30000 !important;
+}
+
+.dotted {
+  border-top: 1px dashed #9199B44D;
+  margin: 24px 0;
+}
+
+.info-account {
+  border: 1px solid #3AB26A;
+  border-radius: 8px;
+  padding: 16px 24px;
+  background-color: #3AB26A0D;
+}
+.info-account--text {
+  color: #0E215E;
+  font-family: notoSansSemiBold;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style.css.map */

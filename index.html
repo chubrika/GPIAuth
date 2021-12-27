@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GPI</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="og:image" content=":og_image">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="./app/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.4/jquery.inputmask.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div></div>
+        <img class="logo" src="./app/img/logo.svg" alt="logo">
+        <div class="header-border"></div>
+    </header>
+    <section>
+        <div class="content">
+            <div class="flex flex-a--center flex-column box">
+                <h1 class="color-darkblue margin-title">რეგისტრაცია</h1>
+                <form action="" class="form-width">
+                    <div class="material m-b--xl">
+                        <input type="text" required>
+                        <span class="borda error-input"></span>
+                        <!-- error -ის შემთხვევაში ედება ეს კლასი error-input -->
+                        <label class="error-color">ელ-ფოსტა</label>
+                        <span class="error-text">
+                            შეიყვანეთ სწორი ელ-ფოსტა
+                        </span>
+                    </div>
+                    <div class="material  m-b--xl">
+                        <input type="password" required>
+                        <span class="borda"></span>
+                        <label>პაროლი</label>
+                        <img class="eye" src="./app/img/closed eye.svg" />
+                        <span class="info--text">
+                            გამოიყენე მინ. 6 სიმბოლო, მათ შორის 1 ციფრი
+                        </span>
+                    </div>
+                    <div class="material  m-b--md">
+                        <input type="password" required>
+                        <span class="borda"></span>
+                        <label>პაროლის გამეორება</label>
+                        <img class="eye" src="./app/img/eye.svg" />
+                    </div>
+                    <div class="flex m-b--xl">
+                        <input type="checkbox" name="terms" id="checkbox-button-1" />
+                        <label for="checkbox-button-1" class="terms"> <span class="terms terms-first">ვეთანხმები
+                                რეგისტრაციის</span> <a class="terms terms-second" href="/index.html">
+                                წესებსა და პირობებს
+                            </a></label>
+                    </div>
+                    <a class="button button-active  m-b--xl" disabled href="./index.html">
+                        <!-- როცა ვალიდაციას გაივლის ღილაკი აქტიურდება ძვრება კლასი button-disabled და ედება კლასი button-active -->
+                        <span class="color-white noto-regular size-16"> რეგისტრაცია</span>
+                    </a>
+                    <div class="flex flex-j--center">
+                        <span class="terms terms-first">გაქვთ ანგარიში?</span> <a class="terms terms-second"
+                            href="./index.html">
+                            ავტორიზაცია
+                        </a>
+                    </div>
+                    <div class="dotted"></div>
+                    <div class="info-account">
+                        <span class="info-account--text">ანგარიშის გასააქტიურებლად მიჰყევი ელ-ფოსტაზე მიღებულ მბულს</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
