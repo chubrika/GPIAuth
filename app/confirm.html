@@ -7,73 +7,81 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="og:image" content=":og_image">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="./app/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.4/jquery.inputmask.min.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <img class="logo" src="../app/img/logo.svg" alt="logo">
-    </div>
-    <div class="flex flex-a--center flex-column container">
-        <div class="full-w back">
-            <a href="../index.html"> <img src="../app/img/back.svg" alt="back"></a>
+    <header class="header">
+        <div></div>
+        <img class="logo" src="./app/img/logo.svg" alt="logo">
+        <div class="header-border"></div>
+    </header>
+    <section>
+        <div class="content">
+            <div class="flex flex-a--center flex-column box">
+                <h1 class="color-darkblue margin-title">რეგისტრაცია</h1>
+                <form action="" class="form-width">
+                    <div class="material m-b--xl">
+                        <input type="text" required>
+                        <span class="borda error-input"></span>
+                        <!-- error -ის შემთხვევაში ედება ეს კლასი error-input -->
+                        <label class="error-color">ელ-ფოსტა</label>
+                        <span class="error-text">
+                            შეიყვანეთ სწორი ელ-ფოსტა
+                        </span>
+                    </div>
+                    <div class="material  m-b--xl">
+                        <input type="password" required>
+                        <span class="borda"></span>
+                        <label>პაროლი</label>
+                        <img class="eye" src="./app/img/closed eye.svg" />
+                        <span class="info--text">
+                            გამოიყენე მინ. 6 სიმბოლო, მათ შორის 1 ციფრი
+                        </span>
+                    </div>
+                    <div class="material  m-b--md">
+                        <input type="password" required>
+                        <span class="borda"></span>
+                        <label>პაროლის გამეორება</label>
+                        <img class="eye" src="./app/img/eye.svg" />
+                    </div>
+                    <div class="flex m-b--xl">
+                        <input type="checkbox" name="terms" id="checkbox-button-1" />
+                        <label for="checkbox-button-1" class="terms"> <span class="terms terms-first">ვეთანხმები
+                                რეგისტრაციის</span> <a class="terms terms-second" href="/index.html">
+                                წესებსა და პირობებს
+                            </a></label>
+                    </div>
+                    <a class="button button-active  m-b--xl" disabled href="./index.html">
+                        <!-- როცა ვალიდაციას გაივლის ღილაკი აქტიურდება ძვრება კლასი button-disabled და ედება კლასი button-active -->
+                        <span class="color-white noto-regular size-16"> რეგისტრაცია</span>
+                    </a>
+                    <div class="flex flex-j--center">
+                        <span class="terms terms-first">გაქვთ ანგარიში?</span> <a class="terms terms-second"
+                            href="./index.html">
+                            ავტორიზაცია
+                        </a>
+                    </div>
+                    <div class="dotted"></div>
+                    <div class="info-account">
+                        <span class="info-account--text">ანგარიშის გასააქტიურებლად მიჰყევი ელ-ფოსტაზე მიღებულ მბულს</span>
+                    </div>
+                </form>
+            </div>
         </div>
-        <span class="confirm confirm-text">
-            ერთჯერადი კოდი გამოიგზავნა ნომერზე <span class="confirm-number">*** ** ** 51</span>
-        </span>
-        <form action="" class="full-w">
-            <div class="material">
-                <input type="number" required>
-                <span class="borda"></span>
-                <label>შეიყვანეთ კოდი</label>
-                <span class="timer" id="timer">02:01</span>
-            </div>
-            <div class="new-code-block">
-                <span class="new-code">
-                    ახალი კოდი
-                </span>
-            </div>
-            <button class="button button-disabled" disabled>
-                <span class="color-white noto-regular size-16"> ავტორიზაცია</span>
-            </button>
-        </form>
-
-    </div>
+        </div>
+        </div>
+    </section>
 
 
 </body>
-
-<script>
-    startTimer();
-
-    function startTimer() {
-        var presentTime = document.getElementById('timer').innerHTML;
-        var timeArray = presentTime.split(/[:]+/);
-        var m = timeArray[0];
-        var s = checkSecond((timeArray[1] - 1));
-        if (s == 59) { m = m - 1 }
-        if ((m + '').length == 1) {
-            m = '0' + m;
-        }
-        if (m < 0) {
-            m = '59';
-        }
-        document.getElementById('timer').innerHTML = m + ":" + s;
-        setTimeout(startTimer, 1000);
-    }
-
-    function checkSecond(sec) {
-        if (sec < 10 && sec >= 0) { sec = "0" + sec };
-        if (sec < 0) { sec = "59" };
-        return sec;
-    }
-
-</script>
 
 </html>
