@@ -30,6 +30,14 @@
     src        : url(../fonts/MYRIADGEOMTAVRULIMEDIUM.TTF);
 }
 
+.geoMedium {
+    font-family: notoSansMedium;
+}
+
+.geoBold {
+    font-family: notoSansBold;
+}
+
 *,
 body,
 html {
@@ -58,15 +66,15 @@ header {
     border-radius: 12px;
     padding      : 40px 0;
     margin       : auto;
-    width        : 540px;
+    width        : 448px;
 }
 
 .form-width {
-    width: 380px;
+    width: 350px;
 }
 
 .margin-title {
-    margin-bottom: 45px;
+    margin-bottom: 32px;
 }
 
 .content {
@@ -87,6 +95,10 @@ header {
 .color {
     &-darkblue {
         color: #0E215E;
+    }
+
+    &-gray {
+        color: #9199B4;
     }
 }
 
@@ -114,6 +126,10 @@ header {
     &-j {
         &--center {
             justify-content: center;
+        }
+
+        &--between {
+            justify-content: space-between;
         }
     }
 }
@@ -143,8 +159,8 @@ header {
         display        : flex;
         align-items    : center;
         justify-content: center;
-        padding-top    : 18px;
-        padding-bottom : 32px;
+        padding-top: 16px;
+        padding-bottom: 24px;
     }
 }
 
@@ -205,12 +221,30 @@ $grey-2: #0E215E;
 
 .m {
     &-b {
+        &--sm {
+            margin-bottom: 16px;
+        }
+
         &--md {
-            margin-bottom: 32px;
+            margin-bottom: 30px;
         }
 
         &--xl {
             margin-bottom: 40px;
+        }
+    }
+}
+
+.p {
+    &-l {
+        &--sm {
+            padding-left: 10px;
+        }
+    }
+
+    &-r {
+        &--sm {
+            padding-right: 10px;
         }
     }
 }
@@ -255,16 +289,17 @@ $grey-2: #0E215E;
 
 .material {
     width   : 100%;
-    height  : 56px;
+    height  : 50px;
     position: relative;
 
     input {
-        font-size: $size-3;
-        padding  : 18px 12px 7px;
-        display  : block;
-        width    : calc(100% - 24px);
-        border   : none;
-        color    : #0E215E;
+        font-size  : $size-2;
+        font-family: notoSansMedium;
+        padding    : 18px 12px 7px;
+        display    : block;
+        width      : calc(100% - 24px);
+        border     : none;
+        color      : #0E215E;
         @include border-radius(3px);
 
         &:focus {
@@ -296,7 +331,7 @@ $grey-2: #0E215E;
 
     label {
         color         : $grey-2;
-        font-size     : $size-3;
+        font-size     : $size-2;
         font-weight   : normal;
         font-family   : notoSansMedium;
         position      : absolute;
@@ -319,6 +354,10 @@ $grey-2: #0E215E;
 }
 
 .size {
+    &-14 {
+        font-size: $size-2;
+    }
+
     &-16 {
         font-size: $size-3;
     }
@@ -392,7 +431,7 @@ input[type="checkbox"] {
 
 h1 {
     font-family: mtavruliBold;
-    font-size  : 32px;
+    font-size  : 24px;
 }
 
 .terms {
@@ -426,6 +465,16 @@ h1 {
     }
 }
 
+.success {
+    &-text {
+        color      : #3AB26A;
+        font-size  : $size-1;
+        position   : absolute;
+        bottom     : -22px;
+        font-family: notoSansSemiBold;
+    }
+}
+
 .dotted {
     border-top: 1px dashed #9199B44D;
     margin    : 24px 0;
@@ -434,12 +483,72 @@ h1 {
 .info-account {
     border          : 1px solid #3AB26A;
     border-radius   : 8px;
-    padding         : 16px 24px;
+    padding         : 10px 12px;
     background-color: #3AB26A0D;
 
     &--text {
         color      : #0E215E;
         font-family: notoSansSemiBold;
-        font-size  : 16px;
+        font-size  : 14px;
     }
+}
+
+
+.switch {
+    display : inline-block;
+    height  : 50px;
+    position: relative;
+    width   : 240px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #fff;
+    bottom          : 4px;
+    content         : "";
+    height          : 50px;
+    left            : 4px;
+    position        : absolute;
+    transition      : 0.4s;
+    width           : 240px;
+    box-shadow      : 0px 10px 20px #0099FF1A;
+    border          : 1px solid #B1B7CA;
+    border-radius   : 8px;
+}
+
+.slider:before {
+    background-color: #EE2A7B;
+    bottom          : 4px;
+    content         : "კაცი";
+    color           : #fff;
+    height          : 40px;
+    left            : 4px;
+    position        : absolute;
+    transition      : .4s;
+    width           : 50%;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    font-family     : notoSansBold;
+    font-size       : 14px;
+}
+
+input:checked+.slider {
+    // background-color: #66bb6a;
+}
+
+input:checked+.slider:before {
+    content  : "ქალი";
+    transform: translateX(111px);
+}
+
+.slider.round {
+    border-radius: 8px;
+}
+
+.slider.round:before {
+    border-radius: 8px;
 }

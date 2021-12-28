@@ -14,6 +14,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="stylesheet" href="../app/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.4/jquery.inputmask.min.js"></script>
 </head>
 
 <body>
@@ -25,60 +27,113 @@
     <section>
         <div class="content">
             <div class="flex flex-a--center flex-column box">
-                <h1 class="color-darkblue margin-title">რეგისტრაცია</h1>
+                <h1 class="color-darkblue margin-title">პირადი მონაცემები</h1>
                 <form action="" class="form-width">
-                    <div class="material m-b--xl">
+                    <!-- m-b--xl error ის შემთხვევაში -->
+                    <div class="material m-b--md">
                         <input type="text" required>
-                        <span class="borda error-input"></span>
                         <!-- error -ის შემთხვევაში ედება ეს კლასი error-input -->
-                        <label class="error-color">ელ-ფოსტა</label>
-                        <span class="error-text">
-                            შეიყვანეთ სწორი ელ-ფოსტა
-                        </span>
-                    </div>
-                    <div class="material  m-b--xl">
-                        <input type="password" required>
                         <span class="borda"></span>
-                        <label>პაროლი</label>
-                        <img class="eye" src="../app/img/closed eye.svg" />
-                        <span class="info--text">
-                            გამოიყენე მინ. 6 სიმბოლო, მათ შორის 1 ციფრი
-                        </span>
+                        <!-- აქ error-color -->
+                        <label>პირადი ნომერი</label>
+                        <!-- <span class="error-text">
+                            შეიყვანეთ პირადი ნომერი
+                        </span> -->
                     </div>
                     <div class="material  m-b--md">
-                        <input type="password" required>
+                        <input id="dob" type="text" required>
                         <span class="borda"></span>
-                        <label>პაროლის გამეორება</label>
-                        <img class="eye" src="../app/img/eye.svg" />
+                        <label>დაბადების თარიღი</label>
                     </div>
-                    <div class="flex m-b--xl">
-                        <input type="checkbox" name="terms" id="checkbox-button-1" />
-                        <label for="checkbox-button-1" class="terms"> <span class="terms terms-first">ვეთანხმები
-                                რეგისტრაციის</span> <a class="terms terms-second" href="/index.html">
-                                წესებსა და პირობებს
-                            </a></label>
+                    <div class="material m-b--md">
+                        <input type="text" required>
+                        <span class="borda"></span>
+                        <label>სახელი</label>
+                    </div>
+                    <div class="material m-b--md">
+                        <input type="text" required>
+                        <span class="borda"></span>
+                        <label>გვარი</label>
+                    </div>
+                    <div class="flex flex-j--between m-b--sm">
+                        <span class="size-14 geoMedium">სქესი</span>
+                        <label class="switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round flex flex-j--between flex-a--center"><span
+                                    class="size-14 geoBold color-gray p-l--sm">კაცი</span>
+                                <span class="size-14 geoBold color-gray p-r--sm">ქალი</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="material m-b--xl">
+                        <input type="number" required>
+                        <span class="borda"></span>
+                        <label>ტელეფონის ნომერი</label>
+                        <span class="success-text">
+                            <img src="../app/img/success.svg" alt="success">
+                            შეიყვანეთ პირადი ნომერი
+                        </span>
+                    </div>
+                    <div class="material">
+                        <input type="number" required>
+                        <span class="borda"></span>
+                        <label>შეიყვანეთ კოდი</label>
+                        <span class="timer" id="timer">02:01</span>
+                    </div>
+                    <div class="new-code-block">
+                        <span class="new-code">
+                            ახალი კოდი
+                        </span>
                     </div>
                     <a class="button button-active  m-b--xl" disabled href="./confirm.html">
                         <!-- როცა ვალიდაციას გაივლის ღილაკი აქტიურდება ძვრება კლასი button-disabled და ედება კლასი button-active -->
-                        <span class="color-white noto-regular size-16"> რეგისტრაცია</span>
+                        <span class="color-white noto-regular size-16"> კოდის მიღება</span>
                     </a>
-                    <div class="flex flex-j--center">
-                        <span class="terms terms-first">გაქვთ ანგარიში?</span> <a class="terms terms-second"
-                            href="./index.html">
-                            ავტორიზაცია
-                        </a>
-                    </div>
-                    <div class="dotted"></div>
-                    <div class="info-account">
-                        <span class="info-account--text">ანგარიშის გასააქტიურებლად მიჰყევი ელ-ფოსტაზე მიღებულ
-                            მბულს</span>
-                    </div>
                 </form>
             </div>
         </div>
         </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function () {
+            // date of birth
+            Inputmask({
+                placeholder: "________",
+                mask: "99/99/9999",
+                showMaskOnFocus: true,
+                showMaskOnHover: false,
+                // jitMasking: true
+                // autoUnmask: true,
+            }).mask("#dob");
+        });
+    </script>
+    <script>
+        startTimer();
+
+        function startTimer() {
+            var presentTime = document.getElementById('timer').innerHTML;
+            var timeArray = presentTime.split(/[:]+/);
+            var m = timeArray[0];
+            var s = checkSecond((timeArray[1] - 1));
+            if (s == 59) { m = m - 1 }
+            if ((m + '').length == 1) {
+                m = '0' + m;
+            }
+            if (m < 0) {
+                m = '59';
+            }
+            document.getElementById('timer').innerHTML = m + ":" + s;
+            setTimeout(startTimer, 1000);
+        }
+
+        function checkSecond(sec) {
+            if (sec < 10 && sec >= 0) { sec = "0" + sec };
+            if (sec < 0) { sec = "59" };
+            return sec;
+        }
+
+    </script>
 </body>
 
 </html>
